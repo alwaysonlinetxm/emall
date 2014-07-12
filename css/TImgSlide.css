@@ -1,0 +1,102 @@
+@charset "utf-8";
+/* -------------------------------------------------
+ * TImgSlide css 
+ * author: artwl
+ * link: http://artwl.cnblogs.com
+ * adapt: alwaysonlinetxm
+ * -------------------------------------------------
+*/
+/* TSlideResize用于调整尺寸 */
+/* 窗口大小 */
+.TSlideResize {
+	width: 480px;      
+    height: 300px;
+	
+}
+/*水平切换用width，竖直切换用height，大小随窗口长宽以及图片个数计算*/
+.TSlideResize .TSlide-list {
+    width: 2400px;
+	/* height: 2250px; */
+}
+
+/*随窗口大小调整*/
+.TSlideResize .TSlide-list li,
+.TSlideResize .TSlide-list li img {
+	width: 480px;      
+    height: 300px;
+}
+/*水平切换时使用*/
+.TSlideResize .TSlide-list li {
+	float: left;
+}
+
+/* 图标容器 */
+.TSlideResize .TSlide-num {
+	height:30px;
+	/* 图标在右侧时使用 */
+	padding-left: 350px;
+}
+/* 图标大小，位置，角弧度 */
+.TSlideResize .TSlide-num li {
+	width:18px;
+    height:18px;
+	line-height: 18px;
+	text-align: center;
+	margin: 6px 3px;
+	color: #f92626;
+}
+/* 图标背景 */
+.TSlideResize .TSlide-mask {
+	height:30px;
+}
+
+.TSlide *{
+    margin:0;
+    padding:0;
+	list-style:none;
+}
+
+.TSlide{   
+    position:relative;          
+    overflow:hidden;
+}
+
+.TSlide-list{
+    position:absolute;
+    left:0;
+    top:0;
+	width: 2400px;
+}
+
+.TSlide-list li {
+	float: left;
+}
+
+.TSlide-num{
+    position:absolute;
+    left:0;
+    bottom:0;    
+    width:100%;
+    z-index:10;
+}
+
+.TSlide-num li{    
+    float: left;
+    background: rgba(255, 255, 255, 0.7);
+    cursor: pointer;
+}
+.TSlide-mask{
+    position:absolute;
+    left:0;
+    background:black;
+    bottom:0;
+    width:100%;
+    opacity:0.3;
+    filter:Alpha(opacity = 30);
+    z-index:1;
+}
+.TSlide-num .TCurrent{
+    background: #f92626;
+	font-weight: bold;
+	color: #fff !important;
+}

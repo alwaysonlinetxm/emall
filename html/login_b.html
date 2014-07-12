@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>login</title>
+	<link rel="stylesheet" href="../css/TBase.css">
+	<link rel="stylesheet" href="../css/TLogin01.css">
+	<link rel="stylesheet" href="../css/common.css">
+	<link rel="stylesheet" href="../css/pages.css">
+</head>
+<body onload="initLoginbForm()">
+	<div class="com-loginb-nav">
+		<a href="../index.html" class="com-loginb-logo"><img src="../images/logo.png" width="140" height="79"></a>
+		<p class="com-loginb-title">商&nbsp;家&nbsp;后&nbsp;台&nbsp;管&nbsp;理&nbsp;系&nbsp;统</p>
+	</div>
+	<div class="loginb-content TClearfix">
+        <form class="TLogin01 TLogin01Resize" id="loginb-login-form">
+			<div id="login-tip"></div>
+            <div class="TLogin01-username">
+                <input type="text" id="login-uname" class="login-input" placeholder="username" autocomplete="on" />
+                <span class="TLogin01-usericon TLogin01-icon">u</span>
+            </div>
+            <div class="TLogin01-password">
+                <input type="password" id="login-pword" class="login-input" placeholder="*******" />
+                <span class="TLogin01-passicon TLogin01-icon">p</span>
+            </div>
+            <div class="TLogin01-rem">
+                <button type="button" id="loginb-login-button" onclick="loginb()">登 陆</button>
+				<div id="login-ing" class="loginb-img"><img src="../images/wait01.gif"></div>
+            </div>
+        </form>
+	</div>
+</body>
+<!--[if !IE]><!--> 
+<script type="text/javascript" src="../js/prefixfree.min.js"></script>
+<!--<![endif]-->
+<script type="text/javascript" src="../js/TLib.js"></script>
+<script type="text/javascript" src="../js/common.js"></script>
+<script type="text/javascript" src="../js/ajax.js"></script>
+<script type="text/javascript" src="../js/owner.js"></script>
+</html>

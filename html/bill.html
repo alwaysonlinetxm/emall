@@ -1,0 +1,108 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>bill</title>
+    <link rel="shortcut icon" href="">
+    <link href="../css/TBase.css" rel="stylesheet" type="text/css" />
+	<link href="../css/common.css" rel="stylesheet" type="text/css" />
+	<link href="../css/TB01.css" rel="stylesheet" type="text/css" />
+    <link href="../css/TB02.css" rel="stylesheet" type="text/css" />
+	<link href="../css/TNMenu02.css" rel="stylesheet" type="text/css" />
+	<link href="../css/TSearch01.css" rel="stylesheet" type="text/css" />	
+	<link href="../css/pages.css" rel="stylesheet" type="text/css" />
+	<link href="../css/TAMenu.css" rel="stylesheet" type="text/css" />
+</head>
+<body onload="initLogin();initBill();">
+	<nav class="TNMenu02-container">
+		<div class="com-nav-center TClearfix">
+			<p class="com-nav-logo"><img src="../images/logo.png" width="160" height="90" /></p>
+			<ul class="TNMenu02 TClearfix">
+				<p class="com-nav-wel">欢迎您! 
+					<a class="com-nav-user" href="login.html">请登录</a>
+					<a class="com-nav-user" href="register.html">免费注册</a>
+				</p>
+				<p class="com-nav-divide"></p>
+				<li><a href="../index.html">首 页</a></li>
+				<li><a href="#">手机版</a></li>
+				<li>
+					<a href="cart.html"><span class="com-cart"></span> 购物车(<span class="com-cart-num">0</span>)</a>
+					<ul class="TNMenu02-sub com-nav-cart">
+						<li><a>您的购物车里还没有任何商品</a></li>
+					</ul>
+				</li>				
+				<li>
+					<a href="user.html?none">用户中心</a>
+					<ul class="TNMenu02-sub com-nav-user">
+						<li><a href="user.html?coll">我的收藏</a></li>
+						<li><a href="user.html?bill">我的订单</a></li>
+						<li><a href="#">已买到的商品</a></li>
+					</ul>
+				</li>
+				<li><a href="forum.html">用户论坛</a></li>
+				<li><a href="#">投诉建议</a></li>
+				<li><a href="#">联系客服</a></li>
+			</ul>
+			<form class="TSearch01 TClearfix TSearchResize">
+				<input type="text" id="com-search" placeholder="输入搜索内容..." required autocomplete="off" onkeyup="inputChange()" onblur="tipHide()">
+				<ul id="com-search-tip"><li>萧敬腾</li><li>杨宗纬</li></ul>
+				<button id="com-search-button" onclick="search();return false;">搜 索</button>
+			</form>
+		</div>
+	</nav>
+	<p class="com-numTip bill-makesure">收货地址确认：
+		<a id="bill-goto-address" href="user.html?address" target="_blank">管理收货地址</a>
+	</p>
+	<ul class="bill-address"></ul>
+	<div class="bill-address-new">
+		<a class="bill-new-button TB02 TB02-white" onclick="showAddNew()"> 使用新地址</a>
+		<p class="com-line"></p>
+		<form class="com-address-select">
+			<p class="com-form-p"><span class="com-redStar ">* </span>收货人姓名：
+				<input type="text" class="com-address-person com-form-input"/>
+			</p>
+			<p class="com-form-p">&nbsp;&nbsp;&nbsp;<span class="com-redStar ">* </span>所在地区：
+				<select id="com-province"></select> 省
+				<select id="com-city"></select> 市
+				<select id="com-area"></select> 区/县
+			</p>
+			<p class="com-form-p">&nbsp;&nbsp;&nbsp;<span class="com-redStar ">* </span>街道地址：
+				<textarea class="com-address-street com-form-input"></textarea>
+			</p>
+			<p class="com-form-p">&nbsp;&nbsp;&nbsp;<span class="com-redStar ">* </span>邮政编码：
+				<input type="text" class="com-address-post com-form-input"/>
+			</p>
+			<p class="com-form-p">&nbsp;&nbsp;&nbsp;<span class="com-redStar ">* </span>手机号码：
+				<input type="text" class="com-address-mobile com-form-input"/>
+			</p>
+			<p class="com-form-p">
+				<input type="button" class="com-address-cancel TB01-button TB01-orange" value="取 消" onclick="cancelAddress(showAddNew)"/>
+				<input type="button" class="com-address-submit TB01-button TB01-orange" value="保 存" onclick="saveAddress(window.location.href)"/>
+				<input type="checkbox" class="com-address-default" id="com-address-default"/>
+				<label for="com-address-default">设为默认</label>
+			</p>
+		</form>
+	</div>
+	<p class="com-numTip bill-makesure">订单信息确认：</p>
+	<table class="com-table bill-table">
+		<tr><th>商 品</th><th>单 价(元)</th><th width="120px">数 量</th><th>运 费(元)</th><th>小 计(元)</th></tr>
+	</table>
+	<div class="bill-sum-container">
+		<span class="com-tip bill-address-tip">请确认收货地址！</span>商品总价：
+		<span class="cart-sum">￥ 0.00</span>
+		<a class="TB01-button TB01-orange TB01-rect button06" onclick="submitBill()">提交订单</a>
+		<p class="com-line"></p>
+	</div>
+	<a href="#top" class="com-back"><img src="../images/back.png" width="50" height="50" alt="back"/></a>
+</body>
+<script type="text/javascript" src="../js/TLib.js"></script>
+<script type="text/javascript" src="../js/ajax.js"></script>
+<script type="text/javascript" src="../js/common.js"></script>
+<!--[if !IE]><!--> 
+<script type="text/javascript" src="../js/prefixfree.min.js"></script>
+<!--<![endif]-->
+<script type="text/javascript" src="../js/user.js"></script>
+<script type="text/javascript" src="../js/bill.js"></script>
+<script type="text/javascript" src="../js/TAddress.js"></script>
+</html>
+

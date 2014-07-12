@@ -1,0 +1,42 @@
+@charset "utf-8";
+/* -------------------------------------------------
+ * TPage02 css 
+ * source: w3cplus
+ * link: http://www.w3cplus.com/demo/pure-css3-create-pagination.html
+ * adapt: alwaysonlinetxm
+ * -------------------------------------------------
+*/
+.TPage02 {
+	margin: 20px auto 40px;
+	display: block;
+}
+
+.TPage02 li {
+	display: inline-block;
+	line-height: 25px;
+	margin: 0 1.5px;
+}
+.TPage02 a {
+	display: block;
+	color: #333;
+	text-shadow: 1px 0 0 #666;
+	padding: 0 10px;
+	border-radius: 2px;
+	box-shadow: 0 1px 0 #ddd inset,0 1px 0 #bbb;
+	background: -*-linear-gradient(top,#e9e4e4,#d2cfcf);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e9e4e4', endColorstr='#d2cfcf',GradientType=0 );
+}
+.TPage02 a:hover {
+	color: #f2f2f2;
+	text-decoration: none;
+	box-shadow: 0 1px 0 #ddd inset,0 1px 0 #bbb;
+	background: -*-linear-gradient(top,#f48b03,#c87100);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f48b03', endColorstr='#c87100',GradientType=0 );
+}
+.TPage02 a:active, 
+.TPage02 a.TPage02-selected {
+	color: #f2f2f2;
+	box-shadow: 1px 0 5px #bbb inset,1px 0 0 #ccc,0 1px 0 #ccc;
+	background: -*-linear-gradient(top,#848080,#9f9b9b);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#848080', endColorstr='#9f9b9b',GradientType=0 );
+}

@@ -1,0 +1,68 @@
+﻿@charset "utf-8";
+/* -------------------------------------------------
+ * TNavMenu02 css 
+ * author: alwaysonlinetxm
+ * -------------------------------------------------
+*/
+.TNMenu02-container {
+	position: relative;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	text-align: center;
+	box-shadow: 0 1px 0 rgba(84,95,109,0.75);
+	background: -*-linear-gradient(top,  #c51b1b 0%,#980c0c 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c51b1b', endColorstr='#980c0c',GradientType=0 );
+}
+.TNMenu02 {
+	float:right;
+}
+.TNMenu02 > li {
+	float: left;
+	font-size: 14px; 
+	position: relative;
+}
+.TNMenu02 > li:hover {
+	background: #980c0c
+}
+.TNMenu02 a{
+	font-family: "微软雅黑",Helvetica;
+	position:relative;
+	z-index: 10;
+	display:block;
+	padding: 6px 10px;
+	text-align: center;
+	color: #fff;
+	text-shadow: 0 0px 1px rgb(255,255,255);
+	transition: all 0.25s linear .0038s;
+}
+.TNMenu02  a:hover {
+	color: #74dedd;
+	text-shadow:0 0 10px rgb(255,255,255);
+}
+.TNMenu02-sub {
+	background: #980c0c;
+	position: absolute;
+	z-index: 99;
+	top: 100%;
+	max-height: 0px;
+	overflow: hidden;
+	transition: all 0.25s linear .0038s;
+	border-radius: 0 0 5px 5px;
+	box-shadow: 0 1px 0 rgba(84,95,109,0.75);
+}
+/* .TNMenu02-sub li {
+	width: auto;
+} */
+
+.TNMenu02-sub li:hover {
+	background-image: -*-linear-gradient(top, #a4b0ba 0%,#861313 4%,#c51b1b 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#861313', endColorstr='#c51b1b',GradientType=0 ); /* IE6-8 */
+}
+.TNMenu02-sub li:last-child {
+	border-radius: 0 0 5px 5px;
+}
+/* 子菜单最大高度 */
+.TNMenu02 li:hover > ul {
+    max-height: 600px;	
+}

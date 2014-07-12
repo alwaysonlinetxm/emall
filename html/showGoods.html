@@ -1,0 +1,208 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>showGoods</title>
+    <link rel="shortcut icon" href="">
+    <link href="../css/TBase.css" rel="stylesheet" type="text/css" />
+	<link href="../css/common.css" rel="stylesheet" type="text/css" />
+	<link href="../css/TB01.css" rel="stylesheet" type="text/css" />
+    <link href="../css/TB02.css" rel="stylesheet" type="text/css" />
+	<link href="../css/TNMenu02.css" rel="stylesheet" type="text/css" />
+	<link href="../css/TSearch01.css" rel="stylesheet" type="text/css" />
+	<link href="../css/pages.css" rel="stylesheet" type="text/css" />	
+	<link href="../css/TPage02.css" rel="stylesheet" type="text/css" />
+	<link href="../css/TPlayer01.css" rel="stylesheet" type="text/css" />
+</head>
+<body onload="initLogin();initGoods()">
+	<nav class="TNMenu02-container">
+		<div class="com-nav-center TClearfix">
+			<p class="com-nav-logo"><img src="../images/logo.png" width="160" height="90" /></p>
+			<ul class="TNMenu02 TClearfix">
+				<p class="com-nav-wel">欢迎您! 
+					<a class="com-nav-user" href="login.html">请登录</a>
+					<a class="com-nav-user" href="register.html">免费注册</a>
+				</p>
+				<p class="com-nav-divide"></p>
+				<li><a href="../index.html">首 页</a></li>
+				<li><a href="#">手机版</a></li>
+				<li>
+					<a href="cart.html"><span class="com-cart"> </span> 购物车(<span class="com-cart-num">0</span>)</a>
+					<ul class="TNMenu02-sub com-nav-cart">
+						<li><a>您的购物车里还没有任何商品</a></li>
+					</ul>
+				</li>				
+				<li>
+					<a href="user.html?none">用户中心</a>
+					<ul class="TNMenu02-sub com-nav-user">
+						<li><a href="user.html?coll">我的收藏</a></li>
+						<li><a href="user.html?bill">我的订单</a></li>
+						<li><a href="#">已买到的商品</a></li>
+					</ul>
+				</li>
+				<li><a href="forum.html">用户论坛</a></li>
+				<li><a href="#">投诉建议</a></li>
+				<li><a href="#">联系客服</a></li>
+			</ul>
+			<form class="TSearch01 TClearfix TSearchResize">
+				<input type="text" id="com-search" placeholder="输入搜索内容..." required autocomplete="off" onkeyup="inputChange()" onblur="tipHide()">
+				<ul id="com-search-tip"><li>萧敬腾</li><li>杨宗纬</li></ul>
+				<button id="com-search-button" onclick="search();return false;">搜 索</button>
+			</form>
+		</div>
+	</nav>
+	<div class="goods-up-content TClearfix">
+		<div class="goods-info-content">
+			<p class="goods-title"></p>
+			<canvas class='goods-preview' width='350' height='350'></canvas>
+			<canvas class='goods-result' width='350' height='350'></canvas>
+			<div class="goods-info">
+				<p class="goods-info-item">价 &nbsp;&nbsp;格：<span class="goods-price"></span></p>
+				<p class="goods-info-item">所在地：<span class="goods-place"></span></p>
+				<p class="goods-info-item">运 &nbsp;&nbsp;费：<span class="goods-fare"></span></p>
+				<p class="goods-info-item">销 &nbsp;&nbsp;量：<span class="goods-sale"></span>件</p>
+				<div class="goods-info-item">评 &nbsp;&nbsp;分：
+					<div class="goods-grade-star">
+						<ul class="com-grade-star goods-gray-star TClearfix">
+							<li></li><li></li><li></li><li></li><li></li>
+						</ul>
+						<div class="goods-orange-container">
+						<ul class="com-grade-star goods-orange-star TClearfix">
+							<li></li><li></li><li></li><li></li><li></li>
+						</ul>
+						</div>
+					</div>
+					<span class="goods-grade"></span>分 | <span class="goods-eval"></span>条品论
+				</div>
+				<p class="goods-info-item">支 &nbsp;&nbsp;付：&nbsp;货到付款 &nbsp;快捷支付</p>
+				<p class="goods-info-item">我要买：&nbsp;<input type="text" class="goods-bnum" value="1"/> 件（库存<span class="goods-stock"></span>件）</p>
+				<p class="goods-bnumTip com-tip-check"></p>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<a class="TB02 TB02-orange button03 grid-buy"><span class="TB02-refresh"></span>立即购买 </a>&nbsp;&nbsp;
+				<a class="TB02 TB02-cyan button03 grid-cart"> 加入购物车 </a></br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<a class="TB02 TB02-white button04 goods-share"> 分享(2)</a>
+				<a class="TB02 TB02-white button04 goods-coll"></a>
+			</div>
+		</div>
+		<ul class="goods-rank com-block-title">
+			<li><p class="com-block-text">热销排行榜：</p></li>
+			<li><span class="goods-rank-num">1</span><a></a></li>
+			<li><span class="goods-rank-num">2</span><a></a></li>
+			<li><span class="goods-rank-num">3</span><a></a></li>
+			<li><span class="goods-rank-num">4</span><a></a></li>
+			<li><span class="goods-rank-num">5</span><a></a></li>
+			<li><span class="goods-rank-num">6</span><a></a></li>
+			<li><span class="goods-rank-num">7</span><a></a></li>
+			<li><span class="goods-rank-num">8</span><a></a></li>
+			<li><span class="goods-rank-num">9</span><a></a></li>
+		</ul>
+	</div>
+	<div class="goods-feedback TClearfix">
+		<ul class="TClearfix">
+			<li class="goods-feedback-title" onclick="showFeedback(this,'goods-detail')"><a>商品详情</a></li>
+			<li class="goods-feedback-title" onclick="showFeedback(this,'goods-eval')"><a>用户评价(<span id="goods-eval-num"></span>)</a></li>
+			<li class="goods-feedback-title" onclick="showFeedback(this,'goods-deal')"><a >成交记录(<span id="goods-deal-num"></span>)</a></li>
+			<li class="goods-feedback-title" onclick="showFeedback(this,'goods-listen')"><a >在线试听</a></li>
+		</ul>
+		<ul>
+			<li class="goods-feedback-content" id="goods-detail"></li>
+			<li class="goods-feedback-content TClearfix" id="goods-eval">
+				<p class="com-numTip">商品评分：<span class="com-number goods-grade">0</span> 分</p>
+				<ul class="goods-star-spread TClearfix">
+					<li class="TClearfix">
+						<ul class="com-grade-star goods-grade-num TClearfix">
+							<li></li><li></li><li></li><li></li><li></li>
+						</ul>
+						<p class="goods-strip"><span class="goods-strip-length"></span><span class="goods-percent"></span></p>
+					</li>
+					<li class="TClearfix">
+						<ul class="com-grade-star goods-grade-num TClearfix">
+							<li></li><li></li><li></li><li></li>
+						</ul>
+						<p class="goods-strip"><span class="goods-strip-length"></span><span class="goods-percent"></span></p>
+					</li>
+					<li class="TClearfix">
+						<ul class="com-grade-star goods-grade-num  TClearfix">
+							<li></li><li></li><li></li>
+						</ul>
+						<p class="goods-strip"><span class="goods-strip-length"></span><span class="goods-percent"></span></p>
+					</li>
+					<li class="TClearfix">
+						<ul class="com-grade-star goods-grade-num TClearfix">
+							<li></li><li></li>
+						</ul>
+						<p class="goods-strip"><span class="goods-strip-length"></span><span class="goods-percent"></span></p>
+					</li>
+					<li class="TClearfix">
+						<ul class="com-grade-star goods-grade-num TClearfix">
+							<li></li>
+						</ul>
+						<p class="goods-strip"><span class="goods-strip-length"></span><span class="goods-percent"></span></p>
+					</li>
+				</ul>
+				<ul class="goods-evals"></ul>
+			</li>
+			<li class="goods-feedback-content" id="goods-deal">
+				<p class="com-numTip">共有 <span class="com-number goods-deal-num">0</span> 条成交记录：</p>
+				<table class="com-table goods-deal-table">
+					<tr><th>买 家</th><th>成交价(元)</th><th>数 量</th><th>成交时间</th><th>款式和型号</th></tr>
+				</table>
+				<div class="goods-deal-wait"></div>
+			</li>
+			<li class="goods-feedback-content" id="goods-listen">
+				<p class="goods-list-title">曲目列表：</p>
+				<ul class="goods-song-list"></ul>
+				<audio id="goods-song-play">
+					<source id="goods-song-mp3" type="audio/mpeg"/>
+					<source id="goods-song-ogg" type="audio/ogg"/>
+				</audio>
+				<div class="TPlayer01 goods-player TClearfix">
+					<div class="TPlayer01-button">
+						<span class="TPlayer01-previous"></span>
+						<span class="TPlayer01-pause"></span>
+						<span class="TPlayer01-stop"></span>
+						<span class="TPlayer01-next"></span>
+					</div>
+					<div class="TPlayer01-content">
+						<div class="TPlayer01-song">&nbsp;&nbsp;当前曲目：<p class="TPlayer01-current-container"><span class="TPlayer01-current-info"></span></p></div>
+						<div class="TPlayer01-bar">
+							<div class="TPlayer01-bar-inset"></div>
+							<span class="TPlayer01-end"></span>
+						</div>
+					</div>
+					<div class="TPlayer01-right">
+						<span class="TPlayer01-volume-icon"></span>
+						<div class="TPlayer01-volume">
+							<div class="TPlayer01-volume-inset"></div>
+							<span class="TPlayer01-end"></span>
+						</div>
+						<p class="TPlayer01-time"><span class="TPlayer01-currentTime">00:00</span>/<span class="TPlayer01-duration">00:00</span></p>
+					</div>
+				</div>
+			</li>
+		</ul>
+	</div>
+	<div class="com-block-title goods-rec">
+		<p class="com-block-text goods-rec-title">购买该商品的顾客还买过：</p>
+		<ul class="TClearfix">
+			<li class="com-recom"></li>
+			<li class="com-recom"></li>
+			<li class="com-recom"></li>
+			<li class="com-recom"></li>
+		</ul>
+	</div>
+	<a href="#top" class="com-back"><img src="../images/back.png" width="50" height="50" alt="back"/></a>
+</body>
+<script type="text/javascript" src="../js/TLib.js"></script>
+<script type="text/javascript" src="../js/ajax.js"></script>
+<script type="text/javascript" src="../js/common.js"></script>
+<!--[if !IE]><!--> 
+<script type="text/javascript" src="../js/prefixfree.min.js"></script>
+<!--<![endif]-->
+<script type="text/javascript" src="../js/user.js"></script>
+<script type="text/javascript" src="../js/showGoods.js"></script>
+<script type="text/javascript" src="../js/TMagnifier.js"></script>
+<script type="text/javascript" src="../js/TPlayer.js"></script>
+</html>
+

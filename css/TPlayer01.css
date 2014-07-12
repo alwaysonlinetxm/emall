@@ -1,0 +1,248 @@
+﻿@charset "utf-8";
+/* -------------------------------------------------
+ * TPlayer01 css 
+ * author: alwaysonlinetxm
+ * -------------------------------------------------
+*/
+
+@font-face {
+	font-family: 'brankic1979';
+	src:url('font/brankic1979.eot');
+	src:url('font/brankic1979.eot?#iefix') format('embedded-opentype'),
+		url('font/brankic1979.svg#brankic1979') format('svg'),
+		url('font/brankic1979.woff') format('woff'),
+		url('font/brankic1979.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'icomoon';
+	src:url('font/icomoon.eot');
+	src:url('font/icomoon.eot?#iefix') format('embedded-opentype'),
+		url('font/icomoon.woff') format('woff'),
+		url('font/icomoon.ttf') format('truetype'),
+		url('font/icomoon.svg#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+.TPlayer01 {
+	width: 500px;
+	height: 60px;
+	color: #fff;
+	border-radius: 10px;
+	box-shadow: 3px 3px 5px #666768;
+	background: -*-linear-gradient(top,  #525253 0%,#2d2d2d 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#525253', endColorstr='#2d2d2d',GradientType=0 );
+}
+
+.TPlayer01-button {
+	float: left;
+	padding-left: 10px;
+}
+.TPlayer01-button span {
+	margin-top: 10px;
+	/* border:1px solid #fff; */
+}
+
+.TPlayer01-button span:hover {
+	cursor: pointer;
+}
+
+.TPlayer01-button span:before {
+	font-family: 'icomoon';	
+	margin-top: 8px;
+	border: 1px solid #292929;
+	background: -*-linear-gradient(top,  #444444 0%,#000000 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#444444', endColorstr='#000000',GradientType=0 );
+}
+
+.TPlayer01-button span:active:before {
+	background: -*-linear-gradient(top,  #000000 0%,#444444 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#444444',GradientType=0 );
+}
+
+.TPlayer01-button span:hover:before {
+	box-shadow: 0 0 1px #999, 0 0 3px #888 inset;
+	transition: all 0.25s linear .0038s;
+}
+
+.TPlayer01-previous:before {	
+	content: "\e003";
+	font-size: 20px;
+	display: inline-block;
+	text-align: center;
+	width: 36px;
+	height: 36px;
+	line-height: 36px;
+	border-radius: 20px;
+}
+
+.TPlayer01-play:before {
+	content: "\e001";
+	font-size: 23px;
+	border-radius: 23px;
+	display: inline-block;
+	text-align: center;
+	width: 40px;
+	height: 40px;
+	line-height: 40px;
+}
+
+.TPlayer01-pause:before {
+	content: "\e000";
+	font-size: 23px;
+	border-radius: 23px;
+	display: inline-block;
+	text-align: center;
+	width: 40px;
+	height: 40px;
+	line-height: 40px;
+}
+
+.TPlayer01-stop:before {
+	content: "\e002";	
+	font-size: 23px;
+	border-radius: 23px;
+	display: inline-block;
+	text-align: center;
+	width: 40px;
+	height: 40px;
+	line-height: 40px;
+}
+
+.TPlayer01-next:before {
+	content: "\e004";
+	font-size: 20px;
+	display: inline-block;
+	text-align: center;
+	width: 36px;
+	height: 36px;
+	line-height: 36px;
+	border-radius: 20px;	
+}
+
+.TPlayer01-content {
+	float: left;
+	margin: 6px 0 0 10px;
+}
+
+.TPlayer01-song {
+	width: 220px;
+	height: 30px;
+	line-height: 30px;
+	background: #595a5a;
+	border-radius: 5px;
+	box-shadow: 0 1px 0 #222 inset;
+	font-family: "微软雅黑";
+	font-size: 14px;
+}
+
+.TPlayer01-current-container {
+	position: relative;
+	display: inline-block;
+	width: 130px;
+	height: 14px;
+	line-height: 14px;
+	margin-bottom: -1px;
+	overflow: hidden;
+}
+
+.TPlayer01-current-info {
+	position: absolute;
+}
+
+.TPlayer01-bar {
+	position: relative;
+	width: 220px;
+	height: 9px;
+	padding-top: 1px;
+	background: #7a7a7a;
+	margin-top: 7px;
+	border-radius: 2px;
+	box-shadow: 0 1px 0 #222 inset;
+	
+}
+
+.TPlayer01-bar:hover {
+	cursor: pointer;
+}
+
+.TPlayer01-bar-inset {
+	width: 0px;
+	height: 9px;
+	border-radius: 2px;
+	background: -*-linear-gradient(top,  #90c5f7 0%,#1a5894 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#90c5f7', endColorstr='#1a5894',GradientType=0 );
+}
+
+.TPlayer01-end {
+	position: absolute;
+	width: 8px;
+	height: 16px;
+	border-radius: 2px;
+	box-shadow: 0 0 2px #999 inset;
+	background: -*-linear-gradient(top,  #ffffff 0%,#dddddd 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#dddddd',GradientType=0 );
+	
+}
+
+.TPlayer01-bar .TPlayer01-end {
+	top: -3px;
+}
+
+.TPlayer01-right {
+	float: left;
+	margin-left: 8px;
+}
+
+.TPlayer01-volume-icon, .TPlayer01-mute-icon {
+	cursor: pointer;
+}
+
+
+.TPlayer01-volume-icon:before {
+	font-family: 'brankic1979';
+	content: "\62";
+	display: inline-block;
+	width: 15px;
+}
+
+.TPlayer01-mute-icon:before {
+	font-family: 'brankic1979';
+	content: "\63";
+	display: inline-block;
+	width: 15px;
+}
+
+.TPlayer01-volume {
+	display: inline-block;
+	cursor: pointer;
+	margin-top: 10px;
+	position: relative;
+	width: 48px;
+	height: 18px;
+	background: 0 4px url(../images/volume1.png);
+	background-repeat: no-repeat;
+}
+
+.TPlayer01-volume-inset {
+	position: absolute;
+	top: 4px;
+	left: 0;
+	width: 28px;
+	height: 14px;
+	background: url(../images/volume2.png);
+}
+
+.TPlayer01-volume .TPlayer01-end {
+	top: 3px;
+	left: 20px;
+}
+
+.TPlayer01-time {
+	margin-top: 5px;
+	color: #ddd;
+	font-size: 12px;
+}

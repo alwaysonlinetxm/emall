@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>register</title>
+	<link rel="stylesheet" href="../css/TBase.css">
+	<link rel="stylesheet" href="../css/pages.css">
+	<link rel="stylesheet" href="../css/TB01.css">
+	<link rel="stylesheet" href="../css/common.css">
+</head>
+<body onload="initRegForm('reg-form')">
+	<div class="login-logo"><a href="../index.html" style="font-size:80px;"><img src="../images/logo_2.png" width="200" height="112"></a></div>
+	<p class="reg-divide"></p>
+	<div class="reg-content">
+		<p class="reg-title">新用户注册</p>
+		<form name="reg-form" id="reg-form">
+			<p class="reg-p">
+				&nbsp;&nbsp;&nbsp;&nbsp;<span class="com-redStar ">* </span><label for="reg-uname">用户名:</label>
+				&nbsp;&nbsp;<input id="reg-uname" name="uname" type="text" class="reg-input" />
+				&nbsp;&nbsp;<span class="reg-tip" id="reg-unameTip">必填，2-15字符，支持汉字、字母、数字及_</span>
+			<p/>
+			<p class="reg-p">
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="com-redStar ">* </span><label for="reg-pword">密 码:</label>
+				&nbsp;&nbsp;<input id="reg-pword" name="pword" type="password" class="reg-input" />
+				&nbsp;&nbsp;<span class="reg-tip" id="reg-pwordTip">必填，不得少于6位</span>
+			<p/>
+			<p class="reg-p">
+				<span class="com-redStar ">* </span><label for="reg-repass">重复密码:</label>
+				&nbsp;&nbsp;<input id="reg-repass" name="repass" type="password" class="reg-input" />
+				&nbsp;&nbsp;<span class="reg-tip" id="reg-repassTip">必填，重复上述密码</span>
+			<p/>
+			<p class="reg-p">
+				<span class="com-redStar ">* </span><label for="reg-email">电子邮箱:</label>
+				&nbsp;&nbsp;<input id="reg-email" name="email" type="text" class="reg-input" />
+				&nbsp;&nbsp;<span class="reg-tip" id="reg-emailTip">必填</span>
+			<p/>
+			<p class="reg-button">
+				<input id="reg-reset" type="reset" class="TB01-button TB01-blue" value="重 置"/>
+				<input id="reg-submit" type="button" class="TB01-button TB01-blue" value="注 册" onclick="register()" />
+			</p>
+		</form>
+	</div>
+</body>
+<script type="text/javascript" src="../js/TLib.js"></script>
+<script type="text/javascript" src="../js/common.js"></script>
+<script type="text/javascript" src="../js/ajax.js"></script>
+<script type="text/javascript" src="../js/prefixfree.min.js"></script>
+<script type="text/javascript" src="../js/user.js"></script>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>login</title>
+	<link rel="stylesheet" href="../css/TBase.css">
+	<link rel="stylesheet" href="../css/TLogin01.css">
+	<link rel="stylesheet" href="../css/pages.css">
+</head>
+<body onload="initLoginForm()">
+	<div class="login-logo"><a href="../index.html" style="font-size:80px;"><img src="../images/logo_2.png" width="200" height="112"></a></div>
+	<div class="login-content TClearfix">
+		<div class="login-adv"><img src="../images/advertisement/login-adv.png" width="500px" height="420px"></div>
+        <form class="TLogin01 TLogin01Resize">
+			<div id="login-tip"></div>
+            <div class="TLogin01-username">
+                <input type="text" id="login-uname" class="login-input" placeholder="username" autocomplete="on" />
+                <span class="TLogin01-usericon TLogin01-icon">u</span>
+            </div>
+            <div class="TLogin01-password">
+                <input type="password" id="login-pword" class="login-input" placeholder="*******" />
+                <span class="TLogin01-passicon TLogin01-icon">p</span>
+            </div>
+            <div class="TLogin01-rem">
+                <input type="checkbox" name="Remember me" id="login-rem" value="Remember me" checked="checked" />
+                <label for="login-rem" data-on="c" class="TLogin01-check"></label>
+                <label for="login-rem" class="TLogin01-info">自动登录</label>
+                <button type="button" onclick="login()">登 陆</button>
+				<div id="login-ing"><img src="../images/wait01.gif"></div>
+            </div>
+            <p class="TLogin01-reg">还没有账号吗?<a href="register.html">立即注册!</a></p>
+        </form>
+	</div>
+</body>
+<!--[if !IE]><!--> 
+<script type="text/javascript" src="../js/prefixfree.min.js"></script>
+<!--<![endif]-->
+<script type="text/javascript" src="../js/TLib.js"></script>
+<script type="text/javascript" src="../js/common.js"></script>
+<script type="text/javascript" src="../js/ajax.js"></script>
+<script type="text/javascript" src="../js/user.js"></script>
+</html>

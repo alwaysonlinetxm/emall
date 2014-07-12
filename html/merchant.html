@@ -1,0 +1,177 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>merchant</title>
+	<link rel="stylesheet" href="../css/TBase.css">
+	<link rel="stylesheet" href="../css/TAlter.css">
+	<link rel="stylesheet" href="../css/common.css">
+	<link rel="stylesheet" href="../css/pages.css">
+	<link rel="stylesheet" href="../css/TPage02.css" type="text/css" />
+	<link rel="stylesheet" href="../css/TB01.css" type="text/css" />
+	<link rel="stylesheet" href="../css/TB02.css" type="text/css" />
+</head>
+<body onload="initMerchant()">
+	<div class="com-loginb-nav">
+		<a href="../index.html" class="com-loginb-logo"><img src="../images/logo.png" width="140" height="79"></a>
+		<p class="com-loginb-title">商&nbsp;家&nbsp;后&nbsp;台&nbsp;管&nbsp;理&nbsp;系&nbsp;统</p>
+	</div>
+	<div class="merchant-func">
+		<p class="merchant-wel"><img src="../images/admin-icon.png" width="20" height="20"/> admin [ <span class="merchant-oid">0</span> ]: <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;欢迎您！&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ <a class="merchant-logout" onclick="logoutb()">注销</a> ]<p>
+		<h2 class="merchant-title">商&nbsp;品&nbsp;管&nbsp;理</h2>
+		<ul class="merchant-options">
+			<li><a class="merchant-option-text" id="merchant-option-1" onclick="showContLi('merchant-goods-list', this)">商品一览</a></li>
+			<li><a class="merchant-option-text" id="merchant-option-2" onclick="showContLi('merchant-goods-add', this)">商品添加</a></li>
+			<li><a class="merchant-option-text" id="merchant-option-3" onclick="showContLi('merchant-bill-list', this)">订单管理</a></li>
+			<li><a class="merchant-option-text">品牌管理</a></li>
+			<li><a class="merchant-option-text">营销管理</a></li>
+			<li><a class="merchant-option-text">统计报表</a></li>
+			<li><a class="merchant-option-text">进货单管理</a></li>
+		</ul>
+	</div>
+	<div class="merchant-content">
+		<ul>
+			<li class="merchant-content-li" id="merchant-goods-list">
+				<h2 class="merchant-title2">商&nbsp;品&nbsp;列&nbsp;表</h2>
+				<p class="com-numTip">您共有上架商品 <span class="com-number" id="merchant-gnum">0</span> 件：</p>
+				<table class="com-table merchant-goods-table">
+					<tr><th>商品编号</th><th width="300px">商 品</th><th>定 价</th><th>库 存</th><th>操 作</th></tr>
+				</table>
+			</li>
+			<li class="merchant-content-li" id="merchant-goods-add">
+				<h2 class="merchant-title2" id="merchant-title2"></h2>
+				<p class="com-form-p merchant-goods-p">
+					<img src="" id="merchant-goods-img"/><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<a class="TB02 TB02-rounded TB02-black button01" id="merchant-upload" onclick="chooseImg()"> 上传照片 </a>
+					<span class="com-input-tip" id="merchant-upload-tip"></span>
+				</p>
+				<div class="com-form-p merchant-goods-p" id="merchant-upload-img">
+					<form id='merchant-uploadForm' name='uploadForm' method='POST' onsubmit="setAction()" enctype='multipart/form-data' target='uploadIcon'>
+						<input type='text' name='predent' id='user-file' />
+						<input type='file' name='upload' id='user-upload' onchange='imgChange(this)' />
+						<!-- <span id='user-upButton' class='TB02 TB02-rounded TB02-black' onclick='transClick()'>浏 览</span> -->
+						<input type="button" id='user-upButton' class='TB02 TB02-rounded TB02-black' value="浏 览" onclick='transClick()' />&nbsp;&nbsp;
+						<input type='submit' id='merchant-formSave' class='TB02 TB02-rounded TB02-black' value='上 传' />
+						<span id='user-iconTip'>支持jpg，png，gif格式，小于1M..</span>
+					</form>
+					<iframe name='uploadIcon' style='display:none'></iframe>
+				</div>
+				<p class="com-form-p merchant-goods-p" id="merchant-goods-num">
+					<span class="com-whiteStar">* </span>商品编号：&nbsp;&nbsp;
+					<span id="merchant-goods-id"></span>
+				</p>
+				<p class="com-form-p merchant-goods-p">
+					<span class="com-redStar">* </span>商品类型：&nbsp;&nbsp;
+					<select class="merchant-goods-tag">
+						<option value="音乐">音乐</option>
+						<option value="影视">影视</option>
+						<option value="动漫">动漫</option>
+						<option value="游戏">游戏</option>
+					</select>&nbsp;&nbsp;
+					<select class="merchant-goods-tag">
+						<option value="">——</option>
+						<option value="华语">华语</option>
+						<option value="欧美">欧美</option>
+						<option value="日韩">日韩</option>
+					</select>&nbsp;&nbsp;
+					<select class="merchant-goods-tag">
+						<option value="">——</option>
+						<option value="男歌手">男歌手</option>
+						<option value="女歌手">女歌手</option>
+						<option value="组合">组合</option>
+					</select>&nbsp;&nbsp;
+					<select class="merchant-goods-tag">
+						<option value="">——</option>
+						<option value="流行">流行</option>
+						<option value="古典">古典</option>
+						<option value="爵士">爵士</option>
+						<option value="摇滚">摇滚</option>
+						<option value="乡村">乡村</option>
+						<option value="怀旧">怀旧</option>
+						<option value="经典">经典</option>
+						<option value="其他">其他</option>
+					</select>&nbsp;&nbsp;
+					<select class="merchant-goods-tag">
+						<option value="">——</option>
+						<option value="流行">流行</option>
+						<option value="古典">古典</option>
+						<option value="爵士">爵士</option>
+						<option value="摇滚">摇滚</option>
+						<option value="乡村">乡村</option>
+						<option value="怀旧">怀旧</option>
+						<option value="经典">经典</option>
+						<option value="其他">其他</option>
+					</select>
+					<span class="com-input-tip">最多选择5个标签</span>
+				</p>
+				<p class="com-form-p merchant-goods-p">
+					<span class="com-redStar">* </span>商品描述：&nbsp;&nbsp;
+					<textarea class="merchant-goods-dis com-form-input"></textarea>
+					<span class="com-input-tip">用于关键字搜索，不超过50个字</span>
+				</p>
+				<p class="com-form-p merchant-goods-p">
+					<span class="com-redStar">* </span>商品详情：&nbsp;&nbsp;
+					<textarea class="merchant-goods-detail com-form-input"></textarea>
+					<span class="com-input-tip">商品的详细描述，展示给买家，不超过400个字</span>
+				</p>
+				<p class="com-form-p merchant-goods-p">
+					<span class="com-redStar">* </span>商品所在地：&nbsp;&nbsp;省份
+					<select id="merchant-goods-province">
+   					</select>&nbsp;&nbsp;城市
+				<select id="merchant-goods-city" >
+				</select>
+				</p>
+				<p class="com-form-p merchant-goods-p">
+					<span class="com-redStar">* </span>商品库存：&nbsp;&nbsp;
+					<input type="text" class="com-form-input" id="merchant-goods-stock" />
+					<span class="com-input-tip"></span>
+				</p>
+				<p class="com-form-p merchant-goods-p">
+					<span class="com-redStar">* </span>商品价格：&nbsp;&nbsp;
+					<input type="text" class="com-form-input" id="merchant-goods-price" />
+					<span class="com-input-tip">￥</span>
+				</p>
+				<p class="com-form-p merchant-goods-p">
+					<span class="com-redStar">* </span>商品运费：&nbsp;&nbsp;
+					<input type="text" class="com-form-input" id="merchant-goods-fare" />
+					<span class="com-input-tip">￥</span>
+				</p>
+				<p class="com-form-p merchant-goods-p">
+					<span class="com-whiteStar">* </span>商品销量：&nbsp;&nbsp;
+					<span id="merchant-goods-sale">0</span>
+				</p>
+				<p class="merchant-goods-button">
+					<input type="button" id="merchant-goods-save" class="TB01-button TB01-blue" value="保 存"/>
+					&nbsp;&nbsp;&nbsp;&nbsp;
+					<input type="button" id="merchant-goods-cancel" class="TB01-button TB01-blue" value="取 消"/>
+				</p>
+			</li>
+			<li class="merchant-content-li" id="merchant-bill-list">
+				<h2 class="merchant-title2">订&nbsp;单&nbsp;列&nbsp;表</h2>
+				<p class="com-numTip">您共有 <span class="com-number" id="merchant-bnum">0</span> 条订单：</p>
+				<table class="com-table merchant-bill-table">
+					<tr><th width="310">商 品</th><th>买 家</th><th>成交价(元)</th><th>数 量</th><th>运 费(元)</th><th>合 计(元)</th><th>状 态</th><th width="80">操 作</th></tr>
+				</table>
+			</li>
+		</ul>
+		<div class="grid-page TClearfix">
+			<ul class="TPage02">
+				<li><a href="#">« First</a></li>
+				<li><a href="#">«</a></li>
+				<li><a href="#">»</a></li>
+				<li><a href="#">Last »</a></li>
+			</ul>
+		</div>
+	</div>
+</body>
+<!--[if !IE]><!--> 
+<script type="text/javascript" src="../js/prefixfree.min.js"></script>
+<!--<![endif]-->
+<script type="text/javascript" src="../js/TLib.js"></script>
+<script type="text/javascript" src="../js/common.js"></script>
+<script type="text/javascript" src="../js/ajax.js"></script>
+<script type="text/javascript" src="../js/TPages.js"></script>
+<script type="text/javascript" src="../js/owner.js"></script>
+<script type="text/javascript" src="../js/TAddress.js"></script>
+<script type="text/javascript" src="../js/uploadIcon.js"></script>
+</html>

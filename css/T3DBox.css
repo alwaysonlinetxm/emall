@@ -1,0 +1,93 @@
+﻿@charset "utf-8";
+@import url(http://fonts.googleapis.com/css?family=Graduate|Oleo+Script);
+/* -------------------------------------------------
+ * T3DBox css 
+ * source: w3cplus
+ * link: http://www.w3cplus.com/demo/419.html http://www.webstuffshare.com/2012/04/showing-product-T3DBox-info-with-css3-3d-transform/
+ * adapt: alwaysonlinetxm
+ * -------------------------------------------------
+*/
+/* 盒子尺寸 */
+.T3DBoxResize {
+	width: 360px;
+    height: 100px;
+	margin: 20px 0 0 18px;
+}
+/* 盒内容器高度 */
+.T3DBoxResize .T3DBox-item {
+	height: 100px;
+}
+/* 信息块尺寸 */
+.T3DBoxResize .T3DBox-info {
+	height: 80px;
+    width: 340px;
+	padding: 10px;
+    font-size: 12px;
+	font-family: "微软雅黑";
+}
+/* 图片尺寸 */
+.T3DBox-img {
+	width: 360px;
+    height: 100px;
+}
+/* PS: 修改高度时还需修改各处translateZ()参数值，使其为高度的一半 */
+.T3DBox {
+    display: inline-block;   
+    vertical-align: top;
+    cursor: pointer;
+    position: relative;
+    font-family: Tahoma, Arial;
+    perspective: 4000px;
+}
+  
+.T3DBox-item {
+    transform-style: preserve-3d;
+    transition: transform .6s;
+}
+/* 高100px，50px为了使转换中心在正方形中心 */
+.T3DBox-item:hover {
+    transform: translateZ(-50px) rotateX(95deg);
+}
+
+.T3DBox-item img {
+    display: block;
+    position: absolute;
+    top: 0;
+    border-radius: 3px;
+    box-shadow: 0px 3px 8px rgba(0,0,0,0.3);
+    transform: translateZ(50px);
+    transition: all .6s;     
+}
+	
+.T3DBox-item:hover img {
+    box-shadow: none;
+    border-radius: 15px;
+}
+    
+.T3DBox-item .T3DBox-info {
+    display: block;
+    position: absolute;
+    top: 0;      
+    text-align: left;
+    border-radius: 15px;
+    text-shadow: 1px 1px 1px rgba(255,255,255,0.5);
+    box-shadow: none;
+    background: rgb(236,241,244);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(236,241,244,1)), color-stop(100%,rgba(190,202,217,1)));
+    background: linear-gradient(to bottom,  rgba(236,241,244,1) 0%,rgba(190,202,217,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ecf1f4', endColorstr='#becad9',GradientType=0 );
+    transform: rotateX(-90deg) translateZ(50px);
+	transition: all .6s;      
+}
+    
+.T3DBox-item:hover .T3DBox-info {
+    box-shadow: 0px 3px 8px rgba(0,0,0,0.3);
+    border-radius: 3px;
+}
+
+.T3DBox-info strong {
+    display: block;
+    margin: .2em 0 .5em 0;
+    font-size: 20px;
+    font-family: "Oleo Script";
+}

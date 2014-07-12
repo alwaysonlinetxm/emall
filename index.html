@@ -1,0 +1,373 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>index</title>
+    <link rel="shortcut icon" href="">
+    <link href="css/TBase.css" rel="stylesheet" type="text/css" />
+	<link href="css/common.css" rel="stylesheet" type="text/css" />
+    <link href="css/TB01.css" rel="stylesheet" type="text/css" />
+	<link href="css/TB02.css" rel="stylesheet" type="text/css" />
+	<link href="css/TNMenu02.css" rel="stylesheet" type="text/css" />
+	<link href="css/TSearch01.css" rel="stylesheet" type="text/css" />
+	<link href="css/pages.css" rel="stylesheet" type="text/css" />
+	<link href="css/TImgSlide.css" rel="stylesheet" type="text/css" media="all"/>
+	<link href="css/T3DBox.css" rel="stylesheet" type="text/css" media="all"/>	
+</head>
+<body onload="initLogin();initIndex();">
+	<nav class="TNMenu02-container">
+		<div class="com-nav-center TClearfix">
+			<p class="com-nav-logo"><img src="images/logo.png" width="160" height="90"></p>
+			<ul class="TNMenu02 TClearfix">
+				<p class="com-nav-wel">欢迎您! 
+					<a class="com-nav-user" href="html/login.html">请登录</a>
+					<a class="com-nav-user" href="html/register.html">免费注册</a>
+				</p>
+				<p class="com-nav-divide"></p>
+				<li><a href="index.html">首 页</a></li>
+				<li><a href="#">手机版</a></li>
+				<li>
+					<a href="html/cart.html"><span class="com-cart"></span> 购物车(<span class="com-cart-num">0</span>)</a>
+					<ul class="TNMenu02-sub com-nav-cart">
+						<li><a>您的购物车里还没有任何商品</a></li>
+					</ul>
+				</li>				
+				<li>
+					<a href="html/user.html?none">用户中心</a>
+					<ul class="TNMenu02-sub com-nav-user">
+						<li><a href="html/user.html?coll">我的收藏</a></li>
+						<li><a href="html/user.html?bill">我的订单</a></li>
+						<li><a href="#">已买到的商品</a></li>
+					</ul>
+				</li>
+				<li><a href="html/forum.html">用户论坛</a></li>
+				<li><a href="#">投诉建议</a></li>
+				<li><a href="#">联系客服</a></li>
+			</ul>
+			<form class="TSearch01 TClearfix TSearchResize">
+				<input type="text" id="com-search" placeholder="输入搜索内容..." required autocomplete="off" onkeyup="inputChange()" onblur="tipHide()">
+				<ul id="com-search-tip"><li>萧敬腾</li><li>杨宗纬</li></ul>
+				<button id="com-search-button" onclick="search();return false;">搜 索</button>
+			</form>
+		</div>
+	</nav>
+	<div class="index-box TClearfix">
+		<div class="index-sort index-redTop">
+			<p class="index-titleContainer">
+				<span class="index-title">分 类</span>
+			</p>
+			<ul class="index-type">
+				<li>影 视</li>
+				<li>
+					<a class="index-type-ele">国 产</a>
+					<a class="index-type-ele">欧 美</a>
+					<a class="index-type-ele">日 韩</a>
+					<a class="index-type-ele">电视剧</a>
+				</li>
+				<li>					
+					<a class="index-type-ele">电 影</a>
+					<a class="index-type-ele">戏 曲</a>
+					<a class="index-type-ele">纪录片</a>
+					<a class="index-type-ele">综 艺</a>
+				</li>
+				<li>
+					<a class="index-type-ele">体 育</a>
+					<a class="index-type-ele">访 谈</a>
+					<a class="index-type-ele">教 育</a>
+					<a class="index-type-ele">新 闻</a>
+				</li>
+				<li>
+					<a class="index-type-ele">其 他</a>
+				</li>
+			</ul>
+			<ul class="index-type">
+				<li>音 乐</li>
+				<li>
+					<a class="index-type-ele" name="音乐&华语&默认&" href="html/gridding.html">华 语</a>
+					<a class="index-type-ele" name="音乐&欧美&默认&" href="html/gridding.html">欧 美</a>
+					<a class="index-type-ele" name="音乐&日韩&默认&" href="html/gridding.html">日 韩</a>
+					<a class="index-type-ele" name="音乐&组合&默认&" href="html/gridding.html">组 合</a>
+				</li>
+				<li>
+					<a class="index-type-ele" name="音乐&男歌手&默认&" href="html/gridding.html">男歌手</a>
+					<a class="index-type-ele" name="音乐&女歌手&默认&" href="html/gridding.html">女歌手</a>
+					<a class="index-type-ele" name="音乐&流行&默认&" href="html/gridding.html">流 行</a>
+					<a class="index-type-ele" name="音乐&古典&默认&" href="html/gridding.html">古 典</a>
+				</li>
+				<li> 					
+					<a class="index-type-ele" name="音乐&爵士&默认&" href="html/gridding.html">爵 士</a>
+					<a class="index-type-ele" name="音乐&摇滚&默认&" href="html/gridding.html">摇 滚</a>
+					<a class="index-type-ele" name="音乐&乡村&默认&" href="html/gridding.html">乡 村</a>
+					<a class="index-type-ele" name="音乐&怀旧&默认&" href="html/gridding.html">怀 旧</a>
+				</li>
+				<li>
+					<a class="index-type-ele" name="音乐&经典&默认&" href="html/gridding.html">经 典</a>
+					<a class="index-type-ele" name="音乐&其他&默认&" href="html/gridding.html">其 他</a>
+				</li>
+			</ul>
+			<ul class="index-type">
+				<li>游 戏</li>
+				<li>
+					<a class="index-type-ele">国 产</a>
+					<a class="index-type-ele">欧 美</a>
+					<a class="index-type-ele">日 韩</a>
+					<a class="index-type-ele">RPG</a>
+				</li>
+				<li>
+					<a class="index-type-ele">骑 战</a>
+					<a class="index-type-ele">策 略</a>
+					<a class="index-type-ele">动 作</a>
+					<a class="index-type-ele">竞 技</a>
+				</li>
+				<li> 
+					<a class="index-type-ele">休 闲</a>
+					<a class="index-type-ele">益 智</a>
+					<a class="index-type-ele">怀 旧</a>
+					<a class="index-type-ele">养 成</a>
+				</li>
+				<li>
+					<a class="index-type-ele">冒 险</a>
+					<a class="index-type-ele">其 他</a>
+				</li>
+			</ul>
+			<ul class="index-type">
+				<li>动 漫</li>
+				<li>
+					<a class="index-type-ele">国 产</a>
+					<a class="index-type-ele">欧 美</a>
+					<a class="index-type-ele">日 韩</a>
+					<a class="index-type-ele">剧场版</a>
+				</li>
+				<li>
+					<a class="index-type-ele">连 载</a>
+					<a class="index-type-ele">完 结</a>
+					<a class="index-type-ele">热 血</a>
+					<a class="index-type-ele">冒 险</a>
+				</li>
+				<li> 
+					<a class="index-type-ele">校 园</a>
+					<a class="index-type-ele">搞 笑</a>
+					<a class="index-type-ele">机 战</a>
+					<a class="index-type-ele">奇 幻</a>
+				</li>
+				<li>
+					<a class="index-type-ele">推 理</a>
+					<a class="index-type-ele">其 他</a>
+				</li>
+			</ul>
+			<p class="index-sort-imgp"><img src="images/advertisement/concert.png" class="index-sort-img"></p>
+		</div>
+		<div class="index-right">
+			<div class="index-adv">
+				<div class="TSlide TSlideResize">
+					<ul class="TSlide-list">
+						<li>
+							<a href="html/showGoods.html?000013" target="_blank">
+								<img src="images/advertisement/13.png" width="480px" height="300px" alt=""/>
+							</a>
+						</li>
+						<li>
+							<a href="html/showGoods.html?000016" target="_blank">
+								<img src="images/advertisement/16.png" width="480px" height="300px" alt=""/>
+							</a>
+						</li>
+						<li>
+							<a href="html/showGoods.html?000045" target="_blank">
+								<img src="images/advertisement/45.png" width="480px" height="300px" alt=""/>
+							</a>
+						</li>
+						<li>
+							<a href="html/showGoods.html?000063" target="_blank">
+								<img src="images/advertisement/63.png" width="480px" height="300px" alt=""/>
+							</a>
+						</li>
+						<li>
+							<a href="html/showGoods.html?000143" target="_blank">
+								<img src="images/advertisement/143.png" width="480px" height="300px" alt=""/>
+							</a>
+						</li>
+					</ul>
+					<ul class="TSlide-num">
+						<li class="TCurrent">1</li>
+						<li>2</li>
+						<li>3</li>
+						<li>4</li>
+						<li>5</li>
+					</ul>
+					<div class="TSlide-mask"></div>
+				</div>
+			</div>
+			<div class="index-notice index-redTop">
+				<p class="index-titleContainer">
+					<span class="index-title">公 告</span>
+				</p>
+				<div class="index-notice-item">
+					<img class="index-cart" src="images/cart.png" />
+					<div class="index-text">
+						<p class="index-p1">全场满 <span class="index-num1">49</span> 元</p>
+						<p class="index-p2">免 运 费</p>
+					</div>
+				</div>
+				<div class="index-notice-item">
+					<p class="index-p3">即日起，全场购买任意商品<br />满 <span class="index-num2">300</span> 立减 <span class="index-num2">100</span></p>
+				</div>
+				<div class="index-notice-item">
+					<p class="index-p3">特价优惠，最低 <span class="index-num2">5</span> 折起售!</p>
+					<ul>
+						&nbsp;&nbsp;&nbsp;&nbsp;<li class="index-notice-li">欧美古典，6折封顶</li>
+						<li class="index-notice-li">华语流行，5折起售</li>
+						&nbsp;&nbsp;&nbsp;&nbsp;<li class="index-notice-li">日韩游戏，清仓6折</li>
+						<li class="index-notice-li">国产影视，7折起售</li>
+					</ul>
+				</div>
+			</div>
+			<div class="index-hot index-redTop">
+				<p class="index-titleContainer">
+					<span class="index-title">火热促销</span>
+				</p>
+				<div class="T3DBox T3DBoxResize">
+					<div class="T3DBox-item">
+						<img src="images/advertisement/ad1.png" class="T3DBox-img" />
+						<span class="T3DBox-info">
+							<strong>致青春</strong> 天后王菲复出！为电影《致青春》献声主题曲. 势不可挡！
+						</span>
+					</div>
+				</div>   
+				<div class="T3DBox T3DBoxResize">
+					<div class="T3DBox-item">
+						<img src="images/advertisement/ad2.png" class="T3DBox-img" />
+						<span class="T3DBox-info">
+							<strong>周杰伦</strong> 耗资过亿打造的「魔天伦」7月空降广州周董腾空武打凭空想象大呼考验「想象力」多于「肌耐力」
+						</span>
+					</div>
+				</div>   
+				<div class="T3DBox T3DBoxResize">
+					<div class="T3DBox-item">
+						<img src="images/advertisement/ad3.png" class="T3DBox-img" />
+						<span class="T3DBox-info">
+							<strong>BACKSTREET BOY</strong> 2013年后街男孩20周年亚洲巡演中国首航' <br />辉煌全球二十载，1990年代中期以来最受欢迎的男生组合.
+						</span>
+					</div>
+				</div>   
+				<div class="T3DBox T3DBoxResize">
+					<div class="T3DBox-item">
+						<img src="images/advertisement/ad4.png" class="T3DBox-img" />
+						<span class="T3DBox-info">
+							<strong>Taylor Swift</strong> 第二张专辑《Fearless》在2008年11月11日发行，在Billboard排行榜上到达了第一的位置.
+						</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="index-rank index-redTop">
+			<p class="index-titleContainer">
+				<span class="index-title">热销推荐</span>
+			</p>
+			<ul class="TClearfix">
+				<li class="index-recom">
+					<a href="html/showGoods.html?000023" target="_blank">
+						<img src="images/cover/000023.jpg" class="index-recom-img"/>
+						<p>GIRL NEXT DOOR 经典单曲 infinity<br />
+							<span class="index-redPrice">￥ 40.00</span>
+							<span class="index-grayPrice">￥ 60.00</span>
+						</p>
+					</a>
+				</li>
+				<li class="index-recom">
+					<a href="html/showGoods.html?000170" target="_blank">
+						<img src="images/cover/000170.jpg" class="index-recom-img"/>
+						<p>田村由加利个人单曲 Endless Story <br />
+							<span class="index-redPrice">￥ 46.00</span>
+							<span class="index-grayPrice">￥ 70.00</span>
+						</p>
+					</a>
+				</li>
+				<li class="index-recom">
+					<a href="html/showGoods.html?000019" target="_blank">
+						<img src="images/cover/000019.jpg" class="index-recom-img"/>
+						<p>许嵩个人专辑 自定义 许嵩的第一张个人专辑<br />
+							<span class="index-redPrice">￥ 40.00</span>
+							<span class="index-grayPrice">￥ 65.00</span>
+						</p>
+					</a>
+				</li>
+				<li class="index-recom">
+					<a href="html/showGoods.html?000035" target="_blank">
+						<img src="images/cover/000035.jpg" class="index-recom-img"/>
+						<p>正版 2011新专辑 林俊杰学不会 预购限定纪念版 赠保温杯<br />
+							<span class="index-redPrice">￥ 53.00</span>
+							<span class="index-grayPrice">￥ 83.00</span>
+						</p>
+					</a>
+				</li>
+				<li class="index-recom">
+					<a href="html/showGoods.html?000065" target="_blank">
+						<img src="images/cover/000065.jpg" class="index-recom-img"/>
+						<p>王力宏 2010年度专辑《十八般武艺》新索发行平装版CD<br />
+							<span class="index-redPrice">￥ 53.00</span>
+							<span class="index-grayPrice">￥ 83.00</span>
+						</p>
+					</a>
+				</li>
+				<li class="index-recom">
+					<a href="html/showGoods.html?000041" target="_blank">
+						<img src="images/cover/000041.jpg" class="index-recom-img"/>
+						<p>周杰伦 影像 写真书 MV侧录照+周导随笔+造型剖析<br />
+							<span class="index-redPrice">￥ 200.00</span>
+							<span class="index-grayPrice">￥ 270.00</span>
+						</p>
+					</a>
+				</li>
+				<li class="index-recom">
+					<a href="html/showGoods.html?000119" target="_blank">
+						<img src="images/cover/000119.jpg" class="index-recom-img"/>
+						<p>孙燕姿: 个人专辑 美丽遇见(2CD) [套装]<br />
+							<span class="index-redPrice">￥ 28.00</span>
+							<span class="index-grayPrice">￥ 50.00</span>
+						</p>
+					</a>
+				</li>
+				<li class="index-recom">
+					<a href="html/showGoods.html?000125" target="_blank">
+						<img src="images/cover/000125.jpg" class="index-recom-img"/>
+						<p>莫文蔚:宝贝2010全新专辑(CD+DVD) [套装]<br />
+							<span class="index-redPrice">￥ 64.00</span>
+							<span class="index-grayPrice">￥ 88.00</span>
+						</p>
+					</a>
+				</li>
+				<li class="index-recom">
+					<a href="html/showGoods.html?000140" target="_blank">
+						<img src="images/cover/000140.jpg" class="index-recom-img"/>
+						<p>迈克尔·杰克逊Michael Jackson:他的历史History(2CD)<br />
+							<span class="index-redPrice">￥ 48.00</span>
+							<span class="index-grayPrice">￥ 80.00</span>
+						</p>
+					</a>
+				</li>
+				<li class="index-recom">
+					<a href="html/showGoods.html?000150" target="_blank">
+						<img src="images/cover/000150.jpg" class="index-recom-img"/>
+						<p>Adele 格莱美最佳流行女歌手完美蜕变，灵魂天后登顶之作<br />
+							<span class="index-redPrice">￥ 67.00</span>
+							<span class="index-grayPrice">￥ 90.00</span>
+						</p>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<a href="#top" class="com-back"><img src="images/back.png" width="50" height="50" alt="back"/></a>
+</body>
+<script type="text/javascript" src="js/TLib.js"></script>
+<script type="text/javascript" src="js/ajax.js"></script>
+<script type="text/javascript" src="js/common.js"></script>
+<!--[if !IE]><!--> 
+<script type="text/javascript" src="js/prefixfree.min.js"></script>
+<!--<![endif]-->
+<script type="text/javascript" src="js/user.js"></script>
+<script type="text/javascript" src="js/TImgSlide.js"></script>
+<script type="text/javascript" src="js/TTween.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+</html>
+
